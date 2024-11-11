@@ -175,10 +175,13 @@ font-size: 1.4rem;
     width: 100%;
     height: 100%;
     display: none;
+    background-color: #1f1988c5;
+    opacity: 100%;
     z-index: 3; /* Coloca encima del menú */
   }
   
   .mobile-menu {
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     background-color: #001986;
@@ -197,8 +200,6 @@ font-size: 1.4rem;
     text-align: center;
     text-decoration: none;
     color: white;
-    transition: background-color 0.3s ease;
-    
   }
   
   .mobile-menu a:hover {
@@ -213,6 +214,7 @@ font-size: 1.4rem;
     .menu {
       display: none;
     }
+    
   
     .mobile-menu-toggle {
       display: flex;
@@ -267,7 +269,22 @@ font-size: 1.4rem;
     margin-left: 18px; /* Space between link and line */
     margin-right: 18px; /* Space between link and line */
 }
+  .mobileSocialIcons {
+    position: absolute;
+    bottom: 0px; /* ajusta según necesites */
+    width: 100%;
+    padding-bottom: 12%;
+    background-color: #020a3048;
+  }
+
+  .mobileSocialIcons h2 {
+    margin-top: 8px;
+  }
+
   
+  .mobileSocialIcons a {
+    font-size: 25px;
+  }
   /* NAV BAR ENDS */
 
 .social-icons {
@@ -643,7 +660,7 @@ display: none;
 }
 
 .services {
-  margin: 40px 30px;
+  margin: 40px 20px;
   text-align: center;
 }
 
@@ -713,11 +730,11 @@ display: none;
 }
 
 .popup-content {
-  background-color: white;
-  padding: 30px;
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
   border-radius: 15px;
-  max-width: 90%;
-  max-height: 90%;
+  width: 40%;
+  height: 85%;
   overflow-y: auto;
   text-align: center;
 }
@@ -726,11 +743,14 @@ display: none;
   margin-bottom: 15px;
 }
 
+.popup-icon-holder img {
+  display: none;
+}
+
 .popup-image-holder img {
-  width: 100%;
-  max-width: 200px;
   border-radius: 10px;
   object-fit: cover;
+  width: 99%;
 }
 
 /* Close Button */
@@ -804,12 +824,22 @@ display: none;
 @media only screen and (max-width: 768px) {
 
   .service-cards {
-    margin: 0px 2px 10px 2px;
+    margin: 0px 0px 10px 0px;
   }
 
   .card p {
     font-size: 1.2em;
     font-weight: lighter;
     margin: 0px 16px 20px 16px;
+  }
+
+  .popup-content {
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 15px;
+    width: 80%;
+    height: 60%;
+    overflow-y: auto;
+    text-align: center;
   }
 }

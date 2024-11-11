@@ -21,7 +21,16 @@
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#about">About Us</a>
+
+        <div class="mobileSocialIcons">
+          
+            <h2>Follow Us</h2>
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        </div>
       </div>
+      
 
       <div>
         <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</div>
@@ -42,7 +51,7 @@
       <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
       <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
       <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-  </div>
+    </div>
 
   <div class="call-for-estimate">
     <i class="fas fa-phone-alt"></i>
@@ -141,11 +150,11 @@
     <div id="popup1" class="popup" onclick="closePopup('popup1')">
         <div class="popup-content" onclick="event.stopPropagation()">
             <button class="close-btn" onclick="closePopup('popup1')">X</button>
-            <div class="popup-image-holder">
-                <img src="logo.jpg" alt="Logo">
+            <div class="popup-icon-holder">
+                <img src="/assets/logo-icon.png" alt="Logo">
             </div>
             <div class="popup-image-holder">
-                <img src="bathroom.jpg" alt="Bathroom Remodeling">
+                <img src="/assets/services/remodel-my-bathroom-kankakee.png" alt="Bathroom Remodeling">
             </div>
             <h3>Bathroom Remodeling</h3>
             <p>Transform your bathroom into a luxurious space with our expert remodeling services. We offer fixture upgrades, tile installation, vanity installation, and modern lighting solutions. Upgrade your bathroom for increased property value and a more functional and aesthetic space.</p>
@@ -164,7 +173,7 @@
                 <img src="kitchen.jpg" alt="Kitchen Renovation">
             </div>
             <h3>Kitchen Renovation</h3>
-            <p>Make your kitchen the heart of your home with our remodeling expertise. We provide cabinet installation, countertop upgrades, appliance installation, and more.</p>
+            <p>Make your kitchen the heart of your home with our remodeling expertise. We provide cabinet installation, countertop upgrades, appliance installation, and enhancements in lighting and backsplash. Improve functionality, efficiency, and overall cooking and entertaining experience.</p>
             <button class="request-btn" onclick="requestService()">Request Service</button>
             <button class="close-popup-btn" onclick="closePopup('popup2')">Close</button>
         </div>
@@ -180,7 +189,7 @@
                 <img src="painting.jpg" alt="Professional Painting">
             </div>
             <h3>Professional Painting</h3>
-            <p>Experience the transformative power of a fresh coat of paint. We cover interior and exterior painting, color consultation, texture and finish options, and more.</p>
+            <p>Experience the transformative power of a fresh coat of paint. Our painting services cover interior and exterior painting, color consultation, texture and finish options, and surface preparation and repair. Enhance curb appeal and increase property value with a personalized and updated look.</p>
             <button class="request-btn" onclick="requestService()">Request Service</button>
             <button class="close-popup-btn" onclick="closePopup('popup3')">Close</button>
         </div>
@@ -212,12 +221,28 @@
           <div class="popup-image-holder">
               <img src="cleaning.jpg" alt="Flooring Installation">
           </div>
-          <h3>Cleaning
+          <h3>Tiling Works
           </h3>
           <p>Upgrade your floors with our diverse flooring services, from hardwood to carpet, tailored to your needs.</p>
           <button class="request-btn" onclick="requestService()">Request Service</button>
           <button class="close-popup-btn" onclick="closePopup('popup5')">Close</button>
       </div>
+
+      <div id="popup6" class="popup" onclick="closePopup('popup5')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closePopup('popup6')">X</button>
+            <div class="popup-image-holder">
+                <img src="logo.jpg" alt="Logo">
+            </div>
+            <div class="popup-image-holder">
+                <img src="cleaning.jpg" alt="Flooring Installation">
+            </div>
+            <h3>Cleaning
+            </h3>
+            <p>Upgrade your floors with our diverse flooring services, from hardwood to carpet, tailored to your needs.</p>
+            <button class="request-btn" onclick="requestService()">Request Service</button>
+            <button class="close-popup-btn" onclick="closePopup('popup5')">Close</button>
+        </div>
   </div>
 </section>
 </body>
