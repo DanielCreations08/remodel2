@@ -838,7 +838,7 @@ display: none;
     padding: 15px;
     border-radius: 15px;
     width: 80%;
-    height: 60%;
+    height: auto;
     overflow-y: auto;
     text-align: center;
   }
