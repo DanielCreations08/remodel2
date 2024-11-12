@@ -699,7 +699,7 @@ display: none;
 
 .card img {
   width: 100%;
-  object-fit: cover;
+  height: 100%;
   border-radius: 15px 15px 0px 00px;
 }
 
@@ -711,6 +711,7 @@ display: none;
 
 .card p {
   font-size: 18px;
+  height: 100%;
   color: #979797;
   margin: 0px 18px 20px 18px;
 }
