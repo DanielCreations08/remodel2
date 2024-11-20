@@ -735,10 +735,11 @@ display: none;
   padding: 15px;
   border-radius: 15px;
   width: 40%;
-  height: 85%;
+  height: 75%;
   overflow-y: auto;
   text-align: center;
 }
+
 
 .popup-image-holder {
   margin-bottom: 15px;
@@ -839,10 +840,15 @@ display: none;
     padding: 15px;
     border-radius: 15px;
     width: 80%;
-    height: auto;
+    height: 90%;
     overflow-y: auto;
     text-align: center;
   }
+
+  .popup-content h3 {
+    margin-top: 20px;
+  }
+  
 }
 
 
@@ -944,9 +950,11 @@ display: none;
   .testimonials-wrapper {
     width: 90%;
     padding: 0px 10px;
-    max-width: 300px;
+    max-width: 230px;
     height: 60vw;
     max-height: 240px;
+    animation: rotate 23s infinite linear;
+    
   }
   
 }

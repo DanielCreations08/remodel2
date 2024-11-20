@@ -1,249 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Name - Professional Services</title>
-    <meta name="description" content="High-quality remodeling and maintenance services. Call for a free estimate.">
-    <meta name="keywords" content="remodeling, maintenance, free estimate, Kankakee">
-    <link rel="stylesheet" href="styles2.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600&display=swap">
-    <script src="script.js" defer></script> 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  </head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruleta Horizontal con Pop-ups</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <section id="home">
-    <nav class="toggleContainer">
-      <div class="mobile-menu">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About Us</a>
-
-        <div class="mobileSocialIcons">
-          
-            <h2>Follow Us</h2>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-        </div>
-      </div>
-      
-
-      <div>
-        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</div>
-        <div class="mobile-menu-container" onclick="closeMobileMenu()"></div>
-      </div>
-    </nav>
-
-    <img id="logo" src="/assets/logo.png" alt="Company Logo">
-
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#about">About Us</a>
-    </nav>
-
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <div class="unique-carousel-container">
+    <div class="unique-carousel" id="unique-carousel">
+      <div class="unique-carousel-item" data-popup="popup1">Anuncio 1</div>
+      <div class="unique-carousel-item" data-popup="popup2">Anuncio 2</div>
+      <div class="unique-carousel-item" data-popup="popup3">Anuncio 3</div>
+      <div class="unique-carousel-item" data-popup="popup4">Anuncio 4</div>
     </div>
-
-  <div class="call-for-estimate">
-    <i class="fas fa-phone-alt"></i>
-    <span>
-        <strong>Call for free estimate</strong><br>
-        <div class="phoneNumber">
-        708-270-7794
-        </div>
-    </span>
   </div>
 
-  <div class="mainTitle">
-    <h2>
-      +30 Years of Experience in Remodeling Services for Kankakee County Homes and Businesses
-    </h2>
+  <!-- Popups -->
+  <div class="unique-popup" id="popup1">
+    <div class="unique-popup-content">
+      <p>Detalles del Anuncio 1</p>
+      <button class="unique-popup-close" data-popup="popup1">Cerrar</button>
+    </div>
+  </div>
+  <div class="unique-popup" id="popup2">
+    <div class="unique-popup-content">
+      <p>Detalles del Anuncio 2</p>
+      <button class="unique-popup-close" data-popup="popup2">Cerrar</button>
+    </div>
+  </div>
+  <div class="unique-popup" id="popup3">
+    <div class="unique-popup-content">
+      <p>Detalles del Anuncio 3</p>
+      <button class="unique-popup-close" data-popup="popup3">Cerrar</button>
+    </div>
+  </div>
+  <div class="unique-popup" id="popup4">
+    <div class="unique-popup-content">
+      <p>Detalles del Anuncio 4</p>
+      <button class="unique-popup-close" data-popup="popup4">Cerrar</button>
+    </div>
   </div>
 
-  <div class="call-now-btn">
-    <a href="">
-      <i class="fas fa-mobile-alt"></i> Call Now
-    </a>
-  </div>
+  <script>
+    const uniqueCarousel = document.getElementById('unique-carousel');
+const uniqueItems = document.querySelectorAll('.unique-carousel-item');
+const uniquePopups = document.querySelectorAll('.unique-popup');
+let uniqueIndex = 0;
 
-  <div class="appointmentBtn">
-    <a href="">
-      <i class="fas fa-mobile-alt"></i> Book An Appointment
-    </a>
-  </div>
-  </section>
+// Función para mover la ruleta
+function moveUniqueCarousel() {
+  const offset = uniqueIndex * -300; // Ajustar posición
+  uniqueCarousel.style.transform = `translateX(${offset}px)`;
 
-  <section>
-    <div class="container-3">
-      <img src="/assets/silva-team.jpg" alt="" data-aos="flip-right" data-aos-duration="1200">
-      <div class="hero-text">
-        <h1>What is your next project?</h1>
-        <p>Your home is more than just a space; it's a reflection of you. Invest wisely, invest in comfort, and watch as your dream home becomes a reality.
-        </p>
-      </div>
-    </div>
-  </section>
+  // Muestra el popup después de la pausa
+  const popupId = uniqueItems[uniqueIndex].getAttribute('data-popup');
+  setTimeout(() => {
+    document.getElementById(popupId).style.display = 'flex';
+  }, 2000);
 
-  <section class="overlay-section">
-    <!-- Corner lines for camera effect -->
-    <div class="corner-line top-left"></div>
-    <div class="corner-line top-right"></div>
-    <div class="corner-line bottom-left"></div>
-    <div class="corner-line bottom-right"></div>
+  uniqueIndex = (uniqueIndex + 1) % uniqueItems.length;
+}
 
-    <!-- Text content -->
-    <div class="content" data-aos="zoom-in" data-aos-duration="1300" data-aos-once="true">
-        <div class="small-text ">We are licensed, insured and bonded</div>
-        <div class="main-text">Looking for ideas?</div>
-        <a href="#" class="button">TAP TO SEE OUR PORTFOLIO</a>
-    </div>
-  </section>  
+// Cierra un popup específico
+function closePopup(event) {
+  const popupId = event.target.getAttribute('data-popup');
+  document.getElementById(popupId).style.display = 'none';
+}
 
-  <section class="services">
-    <div class="service-heading">
-        <h2>Our Services</h2>
-        <p>Offering quality solutions tailored to your needs.</p>
-    </div>
-    <div class="service-cards">
-        <div class="card" onclick="openPopup('popup1')">
-            <img class="service-image" src="/assets/services/remodel-my-bathroom-kankakee.png" alt="Bathroom Remodeling">
-            <h3>Bathroom Remodeling</h3>
-            <p>Transform your bathroom into a luxurious space with our expert remodeling services. We offer fixture upgrades, tile installation, vanity installation, and modern lighting solutions. Upgrade your bathroom for increased property value and a more functional and aesthetic space.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup2')">
-            <img class="service-image" src="/assets/services/remodel-your-kitchen-kankakee-contract-repair.png" alt="Kitchen Renovation">
-            <h3>Kitchen Renovation</h3>
-            <p>Make your kitchen the heart of your home with our remodeling expertise. We provide cabinet installation, countertop upgrades, appliance installation, and enhancements in lighting and backsplash. Improve functionality, efficiency, and overall cooking and entertaining experience.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup3')">
-            <img class="service-image" src="/assets/services/remodel-painting.png" alt="Professional Painting">
-            <h3>Professional Painting</h3>
-            <p>Experience the transformative power of a fresh coat of paint. Our painting services cover interior and exterior painting, color consultation, texture and finish options, and surface preparation and repair. Enhance curb appeal and increase property value with a personalized and updated look.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup4')">
-            <img class="service-image" src="/assets/services/remodel-flooring-kankakee.png" alt="Flooring Installation">
-            <h3>Flooring Installation</h3>
-            <p>Upgrade your floors with our diverse flooring services. From hardwood and tile to laminate and carpet, we offer solutions for improved aesthetics, easy maintenance, and increased durability.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup5')">
-          <img class="service-image" src="/assets/services/remodel-tiling-bourbonnais.png" alt="Flooring Installation">
-          <h3>Tiling Works</h3>
-          <p>Enhance the aesthetics of your space with our expert tiling works. Whether it's a kitchen, bathroom, or any other area, we bring precision and creativity to every project. Quality craftsmanship that speaks for itself.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup6')">
-            <img class="service-image" src="/assets/services/remodel-cleaning-services-kankakee-county.png" alt="Flooring Installation">
-            <h3>Cleaning Services</h3>
-            <p>Post-construction or repair, our cleaning services ensure a spotless and safe environment. We handle the mess, dust, and debris, leaving your newly renovated space ready for immediate use. Your satisfaction, our guarantee.</p>
-          </div>
-    </div>
+// Inicia la ruleta con pausas
+setInterval(moveUniqueCarousel, 5000); // Cada 5 segundos se mueve
 
-    <!-- Popups -->
-    <div id="popup1" class="popup" onclick="closePopup('popup1')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup1')">X</button>
-            <div class="popup-icon-holder">
-                <img src="/assets/logo-icon.png" alt="Logo">
-            </div>
-            <div class="popup-image-holder">
-                <img src="/assets/services/remodel-my-bathroom-kankakee.png" alt="Bathroom Remodeling">
-            </div>
-            <h3>Bathroom Remodeling</h3>
-            <p>Transform your bathroom into a luxurious space with our expert remodeling services. We offer fixture upgrades, tile installation, vanity installation, and modern lighting solutions. Upgrade your bathroom for increased property value and a more functional and aesthetic space.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup1')">Close</button>
-        </div>
-    </div>
+// Asigna eventos de clic a los botones para cerrar los popups
+document.querySelectorAll('.unique-popup-close').forEach(button => {
+  button.addEventListener('click', closePopup);
+});
 
-    <div id="popup2" class="popup" onclick="closePopup('popup2')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup2')">X</button>
-            <div class="popup-image-holder">
-                <img src="logo.jpg" alt="Logo">
-            </div>
-            <div class="popup-image-holder">
-                <img src="kitchen.jpg" alt="Kitchen Renovation">
-            </div>
-            <h3>Kitchen Renovation</h3>
-            <p>Make your kitchen the heart of your home with our remodeling expertise. We provide cabinet installation, countertop upgrades, appliance installation, and enhancements in lighting and backsplash. Improve functionality, efficiency, and overall cooking and entertaining experience.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup2')">Close</button>
-        </div>
-    </div>
+// Añade eventos de clic a los elementos de la ruleta para mostrar popups
+uniqueItems.forEach(item => {
+  item.addEventListener('click', event => {
+    const popupId = event.target.getAttribute('data-popup');
+    document.getElementById(popupId).style.display = 'flex';
+  });
+});
 
-    <div id="popup3" class="popup" onclick="closePopup('popup3')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup3')">X</button>
-            <div class="popup-image-holder">
-                <img src="logo.jpg" alt="Logo">
-            </div>
-            <div class="popup-image-holder">
-                <img src="painting.jpg" alt="Professional Painting">
-            </div>
-            <h3>Professional Painting</h3>
-            <p>Experience the transformative power of a fresh coat of paint. Our painting services cover interior and exterior painting, color consultation, texture and finish options, and surface preparation and repair. Enhance curb appeal and increase property value with a personalized and updated look.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup3')">Close</button>
-        </div>
-    </div>
-
-    <div id="popup4" class="popup" onclick="closePopup('popup4')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup4')">X</button>
-            <div class="popup-image-holder">
-                <img src="logo.jpg" alt="Logo">
-            </div>
-            <div class="popup-image-holder">
-                <img src="flooring.jpg" alt="Flooring Installation">
-            </div>
-            <h3>Flooring Installation</h3>
-            <p>Upgrade your floors with our diverse flooring services, from hardwood to carpet, tailored to your needs.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup4')">Close</button>
-        </div>
-    </div>
-
-
-    <div id="popup5" class="popup" onclick="closePopup('popup5')">
-      <div class="popup-content" onclick="event.stopPropagation()">
-          <button class="close-btn" onclick="closePopup('popup5')">X</button>
-          <div class="popup-image-holder">
-              <img src="logo.jpg" alt="Logo">
-          </div>
-          <div class="popup-image-holder">
-              <img src="cleaning.jpg" alt="Flooring Installation">
-          </div>
-          <h3>Tiling Works
-          </h3>
-          <p>Upgrade your floors with our diverse flooring services, from hardwood to carpet, tailored to your needs.</p>
-          <button class="request-btn" onclick="requestService()">Request Service</button>
-          <button class="close-popup-btn" onclick="closePopup('popup5')">Close</button>
-      </div>
-
-      <div id="popup6" class="popup" onclick="closePopup('popup6')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup6')">X</button>
-            <div class="popup-image-holder">
-                <img src="logo.jpg" alt="Logo">
-            </div>
-            <div class="popup-image-holder">
-                <img src="/assets/services/remodel-flooring-kankakee.png" alt="Flooring Installation">
-            </div>
-            <h3>Cleaning
-            </h3>
-            <p>Upgrade your floors with our diverse flooring services, from hardwood to carpet, tailored to your needs.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup5')">Close</button>
-        </div>
-  </div>
-</section>
+  </script>
 </body>
 </html>
