@@ -915,11 +915,6 @@ display: none;
   margin-bottom: 0px;
 }
 
-.star {
-  font-size: 1.2rem;
-  color: #ffbf00; /* Color dorado para las estrellas */
-  margin: 0 1px;
-}
 
 .testimonial-card:nth-child(1) {
   transform: rotateY(0deg) translateZ(400px);
@@ -982,4 +977,108 @@ display: none;
 
 .see-review-btn:active {
   transform: scale(0.95); /* Pressed effect */
+}
+
+.carouselContainer {
+  margin: 0px 180px;
+  
+}
+
+
+.carousel {
+  width: 100%;
+  height: 710px;
+  position: relative;
+  overflow: hidden;
+  padding: 50px 0px;
+}
+
+.carousel-track {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-card {
+  width: 350px;
+  height: auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transform-origin: center;
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  position: absolute;
+  padding: 40px 5px;
+}
+
+.star {
+  font-size: 1.8rem;
+  color: #ffbf00; /* Color dorado para las estrellas */
+  margin: 0 1px;
+}
+
+
+.carousel-card h3 {
+  margin: 15px 0 5px;
+  font-size: 1.7rem;
+  color: #333;
+}
+
+.carousel-card p {
+  padding: 0 20px;
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.carousel-card .testimonial {
+  font-style: italic;
+  color: #555;
+}
+
+.carousel-card.center {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-card.left,
+.carousel-card.right {
+  z-index: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 5px;
+}
+
+.carousel-btn.left {
+  left: 10px;
+  display: none;
+}
+
+.carousel-btn.right {
+  right: 10px;
+  display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .carouselContainer {
+    margin: 0px 0px;
+  }
 }

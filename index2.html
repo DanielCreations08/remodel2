@@ -3,87 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ruleta Horizontal con Pop-ups</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Carrusel de Testimonios</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #eaf7fa;
+    }
+
+    .carousel {
+      width: 80%;
+      max-width: 900px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-card {
+      width: 300px;
+      height: 350px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transform-origin: center;
+      opacity: 0.5;
+      transform: scale(0.8);
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      position: absolute;
+    }
+
+    .carousel-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-top: 20px;
+    }
+
+    .carousel-card h3 {
+      margin: 15px 0 5px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .carousel-card p {
+      padding: 0 20px;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .carousel-card .testimonial {
+      font-style: italic;
+      color: #555;
+    }
+
+    .carousel-card.center {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .carousel-card.left,
+    .carousel-card.right {
+      z-index: 1;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 5px;
+    }
+
+    .carousel-btn.left {
+      left: 10px;
+    }
+
+    .carousel-btn.right {
+      right: 10px;
+    }
+  </style>
 </head>
 <body>
-  <div class="unique-carousel-container">
-    <div class="unique-carousel" id="unique-carousel">
-      <div class="unique-carousel-item" data-popup="popup1">Anuncio 1</div>
-      <div class="unique-carousel-item" data-popup="popup2">Anuncio 2</div>
-      <div class="unique-carousel-item" data-popup="popup3">Anuncio 3</div>
-      <div class="unique-carousel-item" data-popup="popup4">Anuncio 4</div>
+  <div class="carousel">
+    <button class="carousel-btn left">‹</button>
+    <div class="carousel-track">
+      <div class="carousel-card center">
+        <img src="https://via.placeholder.com/100" alt="Person 1">
+        <h3>Jane Doe</h3>
+        <p class="testimonial">"El servicio fue excelente. Definitivamente volveré a usarlo."</p>
+      </div>
+      <div class="carousel-card right">
+        <img src="https://via.placeholder.com/100" alt="Person 2">
+        <h3>John Smith</h3>
+        <p class="testimonial">"¡Gran experiencia! Recomendaría esto a cualquiera."</p>
+      </div>
+      <div class="carousel-card right">
+        <img src="https://via.placeholder.com/100" alt="Person 3">
+        <h3>Anna Johnson</h3>
+        <p class="testimonial">"El equipo fue muy amable y profesional. Estoy encantada."</p>
+      </div>
+      <div class="carousel-card left">
+        <img src="https://via.placeholder.com/100" alt="Person 4">
+        <h3>Michael Brown</h3>
+        <p class="testimonial">"Un servicio de primera categoría, no podría pedir más."</p>
+      </div>
+      <div class="carousel-card left">
+        <img src="https://via.placeholder.com/100" alt="Person 5">
+        <h3>Emily Davis</h3>
+        <p class="testimonial">"La atención al cliente fue impecable. Muy recomendable."</p>
+      </div>
     </div>
-  </div>
-
-  <!-- Popups -->
-  <div class="unique-popup" id="popup1">
-    <div class="unique-popup-content">
-      <p>Detalles del Anuncio 1</p>
-      <button class="unique-popup-close" data-popup="popup1">Cerrar</button>
-    </div>
-  </div>
-  <div class="unique-popup" id="popup2">
-    <div class="unique-popup-content">
-      <p>Detalles del Anuncio 2</p>
-      <button class="unique-popup-close" data-popup="popup2">Cerrar</button>
-    </div>
-  </div>
-  <div class="unique-popup" id="popup3">
-    <div class="unique-popup-content">
-      <p>Detalles del Anuncio 3</p>
-      <button class="unique-popup-close" data-popup="popup3">Cerrar</button>
-    </div>
-  </div>
-  <div class="unique-popup" id="popup4">
-    <div class="unique-popup-content">
-      <p>Detalles del Anuncio 4</p>
-      <button class="unique-popup-close" data-popup="popup4">Cerrar</button>
-    </div>
+    <button class="carousel-btn right">›</button>
   </div>
 
   <script>
-    const uniqueCarousel = document.getElementById('unique-carousel');
-const uniqueItems = document.querySelectorAll('.unique-carousel-item');
-const uniquePopups = document.querySelectorAll('.unique-popup');
-let uniqueIndex = 0;
+    const track = document.querySelector('.carousel-track');
+    const cards = Array.from(track.children);
+    const leftButton = document.querySelector('.carousel-btn.left');
+    const rightButton = document.querySelector('.carousel-btn.right');
 
-// Función para mover la ruleta
-function moveUniqueCarousel() {
-  const offset = uniqueIndex * -300; // Ajustar posición
-  uniqueCarousel.style.transform = `translateX(${offset}px)`;
+    let currentIndex = 0;
 
-  // Muestra el popup después de la pausa
-  const popupId = uniqueItems[uniqueIndex].getAttribute('data-popup');
-  setTimeout(() => {
-    document.getElementById(popupId).style.display = 'flex';
-  }, 2000);
+    function updateCarousel() {
+      cards.forEach((card, index) => {
+        card.classList.remove('center', 'left', 'right');
 
-  uniqueIndex = (uniqueIndex + 1) % uniqueItems.length;
-}
+        if (index === currentIndex) {
+          card.classList.add('center');
+          card.style.transform = `translateX(0) scale(1)`;
+        } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
+          card.classList.add('left');
+          card.style.transform = `translateX(-120%) scale(0.8)`;
+        } else if (index === (currentIndex + 1) % cards.length) {
+          card.classList.add('right');
+          card.style.transform = `translateX(120%) scale(0.8)`;
+        } else {
+          card.style.transform = `translateX(200%) scale(0.6)`;
+        }
+      });
+    }
 
-// Cierra un popup específico
-function closePopup(event) {
-  const popupId = event.target.getAttribute('data-popup');
-  document.getElementById(popupId).style.display = 'none';
-}
+    function moveNext() {
+      currentIndex = (currentIndex + 1) % cards.length;
+      updateCarousel();
+    }
 
-// Inicia la ruleta con pausas
-setInterval(moveUniqueCarousel, 5000); // Cada 5 segundos se mueve
+    function movePrev() {
+      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      updateCarousel();
+    }
 
-// Asigna eventos de clic a los botones para cerrar los popups
-document.querySelectorAll('.unique-popup-close').forEach(button => {
-  button.addEventListener('click', closePopup);
-});
+    // Event listeners for buttons
+    leftButton.addEventListener('click', movePrev);
+    rightButton.addEventListener('click', moveNext);
 
-// Añade eventos de clic a los elementos de la ruleta para mostrar popups
-uniqueItems.forEach(item => {
-  item.addEventListener('click', event => {
-    const popupId = event.target.getAttribute('data-popup');
-    document.getElementById(popupId).style.display = 'flex';
-  });
-});
+    // Initialize carousel
+    updateCarousel();
 
+    // Auto-scroll every 5 seconds
+    setInterval(moveNext, 5000);
   </script>
 </body>
 </html>
