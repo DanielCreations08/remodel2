@@ -1,415 +1,242 @@
 <!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Name - Professional Services</title>
-    <meta name="description" content="High-quality remodeling and maintenance services. Call for a free estimate.">
-    <meta name="keywords" content="remodeling, maintenance, free estimate, Kankakee">
-    <link rel="stylesheet" href="styles2.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Signika:wght@400;600&display=swap">
-    
-    <script src="script.js" defer></script> 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dropdown Menu with Search Box | CodingNepal</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
 
-    
-    
-  </head>
 <body>
-  <section id="home">
-    <nav class="toggleContainer">
-      <div class="mobile-menu">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About Us</a>
 
-        <div class="mobileSocialIcons">
-          
-            <h2>Follow Us</h2>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-        </div>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.wrapper{
+  text-decoration: none;
+  background: #65a0ff75;
+  width: 100%;
+}
+.wrapper nav{
+  position: relative;
+  display: flex;
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+}
+nav .content{
+  display: flex;
+  align-items: center;
+}
+nav .content .links{
+  margin-left: 80px;
+  display: flex;
+}
+
+.content .links li{
+  list-style: none;
+  line-height: 70px;
+}
+.content .links li a,
+.content .links li label{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 17px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.content .links li label{
+  display: none;
+}
+.content .links li a:hover,
+.content .links li label:hover{
+  background: #323c4e;
+}
+.wrapper .search-icon,
+.wrapper .menu-icon{
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 70px;
+  width: 70px;
+  text-align: center;
+}
+.wrapper .menu-icon{
+  display: none;
+}
+
+
+.wrapper input[type="checkbox"]{
+  display: none;
+}
+/* Dropdown Menu code start */
+.content .links ul{
+  position: absolute;
+  background: #171c24;
+  top: 80px;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+.content .links li:hover > ul{
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+.content .links ul li a{
+  display: block;
+  width: 100%;
+  line-height: 30px;
+  border-radius: 0px!important;
+}
+.content .links ul ul{
+  position: absolute;
+  top: 0;
+  right: calc(-100% + 8px);
+}
+.content .links ul li{
+  position: relative;
+}
+.content .links ul li:hover ul{
+  top: 0;
+}
+/* Responsive code start */
+@media screen and (max-width: 1250px){
+  .wrapper nav{
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  nav .content .links{
+    margin-left: 30px;
+  }
+  .content .links li a{
+    padding: 8px 13px;
+  }
+  .wrapper .search-box{
+    max-width: calc(100% - 100px);
+  }
+  .wrapper .search-box input{
+    padding: 0 100px 0 15px;
+  }
+}
+@media screen and (max-width: 900px){
+  .wrapper .menu-icon{
+    display: block;
+  }
+  .wrapper #show-menu:checked ~ .menu-icon i::before{
+    content: "\f00d";
+  }
+  nav .content .links{
+    display: block;
+    position: fixed;
+    background: #14181f;
+    height: 100%;
+    width: 100%;
+    top: 70px;
+    left: -100%;
+    margin-left: 0;
+    max-width: 350px;
+    overflow-y: auto;
+    padding-bottom: 100px;
+    transition: all 0.3s ease;
+  }
+  nav #show-menu:checked ~ .content .links{
+    left: 0%;
+  }
+  .content .links li{
+    margin: 15px 20px;
+  }
+  .content .links li a,
+  .content .links li label{
+    line-height: 40px;
+    font-size: 20px;
+    display: block;
+    padding: 8px 18px;
+    cursor: pointer;
+  }
+  .content .links li a.desktop-link{
+    display: none;
+  }
+  /* dropdown responsive code start */
+  .content .links ul,
+  .content .links ul ul{
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    background: none;
+    max-height: 0px;
+    overflow: hidden;
+  }
+  .content .links #show-features:checked ~ ul,
+  .content .links #show-services:checked ~ ul,
+  .content .links #show-items:checked ~ ul{
+    max-height: 100vh;
+  }
+  .content .links ul li{
+    margin: 7px 20px;
+  }
+  .content .links ul li a{
+    font-size: 18px;
+    line-height: 30px;
+    border-radius: 5px!important;
+  }
+}
+
+  </style>
+
+
+  <div class="wrapper">
+    <nav>
+      <input type="checkbox" id="show-search">
+      <input type="checkbox" id="show-menu">
+      <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+      <div class="content">
+        <ul class="links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Portfolio</a></li>
+
+          <li>
+            <a href="#" class="desktop-link">Services</a>
+            <input type="checkbox" id="show-services">
+            <label for="show-services">Services</label>
+            <ul>
+              <li><a href="#">Drop Menu 1</a></li>
+              <li><a href="#">Drop Menu 2</a></li>
+              <li><a href="#">Drop Menu 3</a></li>
+              <li>
+                <a href="#" class="desktop-link">More Items</a>
+                <input type="checkbox" id="show-items">
+                <label for="show-items">More Items</label>
+                <ul>
+                  <li><a href="#">Sub Menu 1</a></li>
+                  <li><a href="#">Sub Menu 2</a></li>
+                  <li><a href="#">Sub Menu 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">About Us</a></li>
+        </ul>
       </div>
 
-      <div>
-        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</div>
-        <div class="mobile-menu-container" onclick="closeMobileMenu()"></div>
-      </div>
     </nav>
-
-    <img id="logo" src="/assets/Logo.png" alt="Company Logo">
-
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#about">About Us</a>
-    </nav>
-
-    <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-    </div>
-
-  <div class="call-for-estimate">
-    <i class="fas fa-phone-alt"></i>
-    <span>
-        <strong>Call for free estimate</strong><br>
-        <div class="phoneNumber">
-        708-270-7794
-        </div>
-    </span>
   </div>
 
-  <div class="mainTitle">
-    <h2>
-      +30 Years of Experience in Remodeling Services for Kankakee County Homes and Businesses
-    </h2>
-  </div>
-
-  <div class="call-now-btn">
-    <a href="">
-      <i class="fas fa-mobile-alt"></i> Call Now
-    </a>
-  </div>
-
-  <div class="appointmentBtn">
-    <a href="">
-      <i class="fas fa-mobile-alt"></i> Book An Appointment
-    </a>
-  </div>
-  </section>
-
-  <section>
-    <div class="container-3">
-      <img src="/assets/silva-team.jpg" alt="" data-aos="flip-right" data-aos-duration="1200">
-      <div class="hero-text">
-        <h1>What is your next project?</h1>
-        <p>Your home is more than just a space; it's a reflection of you. Invest wisely, invest in comfort, and watch as your dream home becomes a reality.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="overlay-section">
-    <!-- Corner lines for camera effect -->
-    <div class="corner-line top-left"></div>
-    <div class="corner-line top-right"></div>
-    <div class="corner-line bottom-left"></div>
-    <div class="corner-line bottom-right"></div>
-
-    <!-- Text content -->
-    <div class="content" data-aos="zoom-in" data-aos-duration="1300" data-aos-once="true">
-        <div class="small-text ">We are licensed, insured and bonded</div>
-        <div class="main-text">Looking for ideas?</div>
-        <a href="#" class="button">TAP TO SEE OUR PORTFOLIO</a>
-    </div>
-  </section>  
-
-  <section class="services">
-    <div class="service-heading">
-        <h2>Our Services</h2>
-        <p>Offering quality solutions tailored to your needs.</p>
-    </div>
-    <div class="service-cards">
-        <div class="card" onclick="openPopup('popup1')">
-            <img class="service-image" src="/assets/services/remodel-my-bathroom-kankakee.png" alt="Bathroom Remodeling">
-            <h3>Bathroom Remodeling</h3>
-            <p>Transform your bathroom into a luxurious space with our expert remodeling services. We offer fixture upgrades, tile installation, vanity installation, and modern lighting solutions. Upgrade your bathroom for increased property value and a more functional and aesthetic space.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup2')">
-            <img class="service-image" src="/assets/services/remodel-your-kitchen-kankakee-contract-repair.png" alt="Kitchen Renovation">
-            <h3>Kitchen Renovation</h3>
-            <p>Make your kitchen the heart of your home with our remodeling expertise. We provide cabinet installation, countertop upgrades, appliance installation, and enhancements in lighting and backsplash. Improve functionality, efficiency, and overall cooking and entertaining experience.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup3')">
-            <img class="service-image" src="/assets/services/remodel-painting.png" alt="Professional Painting">
-            <h3>Professional Painting</h3>
-            <p>Restore and refresh your space with expert painting for walls and furniture. A fresh coat of paint adds lasting beauty, protects surfaces, and boosts property value, creating an inviting atmosphere in every room.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup4')">
-            <img class="service-image" src="/assets/services/remodel-flooring-kankakee.png" alt="Flooring Installation">
-            <h3>Flooring</h3>
-            <p>Upgrade your floors with our diverse flooring services. From hardwood and tile to laminate and carpet, we offer solutions for improved aesthetics, easy maintenance, and increased durability.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup5')">
-          <img class="service-image" src="/assets/services/remodel-tiling-bourbonnais.png" alt="Flooring Installation">
-          <h3>Tiling</h3>
-          <p>Enhance the aesthetics of your space with our expert tiling works. Whether it's a kitchen, bathroom, or any other area, we bring precision and creativity to every project. Quality craftsmanship that speaks for itself.</p>
-        </div>
-        <div class="card" onclick="openPopup('popup6')">
-            <img class="service-image" src="/assets/services/remodel-cleaning-services-kankakee-county.png" alt="Flooring Installation">
-            <h3>Junk Removal</h3>
-            <p>Post-construction or repair, our cleaning services ensure a spotless and safe environment. We handle the mess, dust, and debris, leaving your newly renovated space ready for immediate use. Your satisfaction, our guarantee.</p>
-          </div>
-    </div>
-
-    <!-- Popups -->
-    <div id="popup1" class="popup" onclick="closePopup('popup1')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup1')">X</button>
-            <div class="popup-icon-holder">
-                <img src="/assets/logo-icon.png" alt="Logo">
-            </div>
-            <div class="popup-image-holder">
-                <img src="/assets/services/remodel-my-bathroom-kankakee.png" alt="Bathroom Remodeling">
-            </div>
-            <h3>Bathroom Remodeling</h3>
-            <p>Transform your bathroom into a luxurious space with our expert remodeling services. We offer fixture upgrades, tile installation, vanity installation, and modern lighting solutions. Upgrade your bathroom for increased property value and a more functional and aesthetic space.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup1')">Close</button>
-        </div>
-    </div>
-
-    <div id="popup2" class="popup" onclick="closePopup('popup2')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup2')">X</button>
-            <div class="popup-image-holder">
-                <img src="/assets/services/remodel-your-kitchen-kankakee-contract-repair.png" alt="Kitchen Renovation">
-            </div>
-            <h3>Kitchen Renovation</h3>
-            <p>Make your kitchen the heart of your home with our remodeling expertise. We provide cabinet installation, countertop upgrades, appliance installation, and enhancements in lighting and backsplash. Improve functionality, efficiency, and overall cooking and entertaining experience.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup2')">Close</button>
-        </div>
-    </div>
-
-    <div id="popup3" class="popup" onclick="closePopup('popup3')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup3')">X</button>
-            <div class="popup-image-holder">
-                <img src="/assets/services/remodel-painting.png" alt="Professional Painting">
-            </div>
-            <h3>Professional Painting</h3>
-            <p>Experience the transformative power of a fresh coat of paint. Our painting services cover interior and exterior painting, color consultation, texture and finish options, and surface preparation and repair. Enhance curb appeal and increase property value with a personalized and updated look.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup3')">Close</button>
-        </div>
-    </div>
-
-    <div id="popup4" class="popup" onclick="closePopup('popup4')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="close-btn" onclick="closePopup('popup4')">X</button>
-            <div class="popup-image-holder">
-                <img src="/assets/services/remodel-flooring-kankakee.png" alt="Flooring Installation">
-            </div>
-            <h3>Flooring Installation</h3>
-            <p>Upgrade your floors with our diverse flooring services, from hardwood to carpet, tailored to your needs.</p>
-            <button class="request-btn" onclick="requestService()">Request Service</button>
-            <button class="close-popup-btn" onclick="closePopup('popup4')">Close</button>
-        </div>
-    </div>
-
-    <div id="popup5" class="popup" onclick="closePopup('popup5')">
-      <div class="popup-content" onclick="event.stopPropagation()">
-          <button class="close-btn" onclick="closePopup('popup5')">X</button>
-          <div class="popup-image-holder">
-              <img src="/assets/services/remodel-tiling-bourbonnais.png" alt="Flooring Installation">
-          </div>
-          <h3>Tiling
-          </h3>
-          <p>Enhance the aesthetics of your space with our expert tiling works. Whether it's a kitchen, bathroom, or any other area, we bring precision and creativity to every project. Quality craftsmanship that speaks for itself.</p>
-          <button class="request-btn" onclick="requestService()">Request Service</button>
-          <button class="close-popup-btn" onclick="closePopup('popup5')">Close</button>
-      </div>
-    </div>
-
-    <div id="popup6" class="popup" onclick="closePopup('popup6')">
-      <div class="popup-content" onclick="event.stopPropagation()">
-          <button class="close-btn" onclick="closePopup('popup6')">X</button>
-          <div class="popup-image-holder">
-              <img src="/assets/services/remodel-cleaning-services-kankakee-county.png" alt="Flooring Installation">
-          </div>
-          <h3>Junk Removal
-          </h3>
-          <p>Post-construction or repair, our cleaning services ensure a spotless and safe environment. We handle the mess, dust, and debris, leaving your newly renovated space ready for immediate use. Your satisfaction, our guarantee.</p>
-          <button class="request-btn" onclick="requestService()">Request Service</button>
-          <button class="close-popup-btn" onclick="closePopup('popup6')">Close</button>
-      </div>
-    </div>
-</section>
-
-<section class="testimonials-container">
-  <div class="testimonials-wrapper">
-    <div class="testimonial-card" onclick="openPopup('testimonialPopup1')">
-      <span class="testimonial-name">Barbara Rowley</span>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-      </div>
-      <p class="testimonial-text">"We highly recommend Silvas Remodeling. These guys are hard workers, and went above and beyond for us..."</p>
-      <button class="see-review-btn" onclick="openPopup('testimonialPopup1')">See Review</button>
-    </div>
-    <div class="testimonial-card" onclick="openPopup('testimonialPopup2')">
-      <span class="testimonial-name">Peg Caher Caprara</span>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-      </div>
-      <p class="testimonial-text">"I just love having this company do work on my house. I had a kitchen remodel (GREAT JOB)..."</p>
-      <button class="see-review-btn" onclick="openPopup('testimonialPopup2')">See Review</button>
-    </div>
-    <div class="testimonial-card" onclick="openPopup('testimonialPopup3')">
-      <span class="testimonial-name">Cynthia Eubanks-Ortiz</span>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-      </div>
-      <p class="testimonial-text">"I really appreciate them helping with my design for the tiles. They made sure that I understood any hiccups..."</p>
-      <button class="see-review-btn" onclick="openPopup('testimonialPopup3')">See Review</button>
-    </div>
-    <div class="testimonial-card" onclick="openPopup('testimonialPopup4')">
-      <span class="testimonial-name">Claudia Noe</span>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-      </div>
-      <p class="testimonial-text">"I have a small master bath in a home built in the late 1960s. The shower floor was in need of repair..."</p>
-      <button class="see-review-btn" onclick="openPopup('testimonialPopup4')">See Review</button>
-    </div>
-    <div class="testimonial-card" onclick="openPopup('testimonialPopup5')">
-      <span class="testimonial-name">Kathy L Anderson</span>
-      <div class="testimonial-rating">
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-        <span class="star">&#9733;</span>
-      </div>
-      <p class="testimonial-text">"My experience with Rey was excellent! He painted the kitchen walls, cabinets, put down new flooring..."</p>
-      <button class="see-review-btn" onclick="openPopup('testimonialPopup5')">See Review</button>
-    </div>
-  </div>
-     <!-- Pop-ups -->
-<div id="testimonialPopup1" class="popup" onclick="closePopup('testimonialPopup1')">
-  <div class="popup-content" onclick="event.stopPropagation()" style="height: auto; padding-bottom: 28px;">
-    <button class="close-btn" onclick="closePopup('testimonialPopup1')">X</button>
-    <h3>Barbara Rowley</h3>
-    <p>"We highly recommend Silvas Remodeling. These guys are hard workers, and went above and beyond for us. Beautiful work, and very easy to work with. Would definitely call on again! Thank you!!!"</p>
-    <button class="close-popup-btn" onclick="closePopup('testimonialPopup1')">Close Review</button>
-  </div>
-</div>
-
-<div id="testimonialPopup2" class="popup" onclick="closePopup('testimonialPopup2')">
-  <div class="popup-content" onclick="event.stopPropagation()" style="height: auto; padding-bottom: 28px;">
-    <button class="close-btn" onclick="closePopup('testimonialPopup2')">X</button>
-    <h3>Peg Caher Caprara</h3>
-    <p>"I just love having this company do work on my house. I had a kitchen remodel (GREAT JOB). And called back and had 2 rooms painted by them. I trust them to be alone in my house (had a Dr appointment). Trustworthy & Dependable THEY R THE BEST!!! NO GAMES & NO RUN AROUND."</p>
-    <button class="close-popup-btn" onclick="closePopup('testimonialPopup2')">Close Review</button>
-  </div>
-</div>
-
-<div id="testimonialPopup3" class="popup" onclick="closePopup('testimonialPopup3')">
-  <div class="popup-content" onclick="event.stopPropagation()" style="height: auto; padding-bottom: 28px;">
-    <button class="close-btn" onclick="closePopup('testimonialPopup3')">X</button>
-    <h3>Cynthia Eubanks-Ortiz</h3>
-    <p>"I really appreciate them helping with my design for the tiles. They made sure that I understood any hiccups that came up and all my questions were answered. Very professional company!"</p>
-    <button class="close-popup-btn" onclick="closePopup('testimonialPopup3')">Close Review</button>
-  </div>
-</div>
-
-<div id="testimonialPopup4" class="popup" onclick="closePopup('testimonialPopup4')">
-  <div class="popup-content" onclick="event.stopPropagation()" style="height: auto; padding-bottom: 28px;">
-    <button class="close-btn" onclick="closePopup('testimonialPopup4')">X</button>
-    <h3>Claudia Noe</h3>
-    <p>"I have a small master bath in a home built in the late 1960s. The shower floor was in need of repair (I had retiled the shower previously out of necessity), the fixtures were super short and the ceramic floor was the original. Cris, Rey Jr. and Rey Sr. are true professionals and it is apparent that they take great pride in their craftsmanship. They kept me informed of all challenges encountered and made sure I was part of the decision-making process. The project was delayed due to some faulty tiles I received (special order from Lowe’s) but they jumped right back in to complete the job as soon as possible."</p>
-    <button class="close-popup-btn" onclick="closePopup('testimonialPopup4')">Close Review</button>
-  </div>
-</div>
-
-<div id="testimonialPopup5" class="popup" onclick="closePopup('testimonialPopup5')">
-  <div class="popup-content" onclick="event.stopPropagation()" style="height: auto; padding-bottom: 28px;">
-    <button class="close-btn" onclick="closePopup('testimonialPopup5')">X</button>
-    <h3>Kathy L Anderson</h3>
-    <p>"My experience with Rey was excellent! He painted the kitchen walls, cabinets, put down new flooring, new countertops, and backsplash. Rey was professional, thorough, and paid great attention to detail. No matter the difficulties of the workday, he was always pleasant and flexible. I’d recommend Rey to anyone who needs quality work done at an affordable rate."</p>
-    <button class="close-popup-btn" onclick="closePopup('testimonialPopup5')">Close Review</button>
-  </div>
-</div>
-</section>
-
-
-<section>
-  <div class="carouselContainer">
-    <div class="carousel">
-      <button class="carousel-btn left">‹</button>
-      <div class="carousel-track">
-        <div class="carousel-card center">
-          <h3>Barbara Rowley</h3>
-          <div class="testimonial-rating">
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-          </div>
-          <p class="testimonial">"We highly recommend Silvas Remodeling. These guys are hard workers, and went above and beyond for us. Beautiful work, and very easy to work with. Would definitely call on again! Thank you!!!"</p>
-        </div>
-        <div class="carousel-card right">
-          <h3>Peg Caher Caprara</h3>
-          <div class="testimonial-rating">
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-          </div>
-          <p class="testimonial">"I just love having this company do work on my house. I had a kitchen remodel (GREAT JOB). And called back and had 2 rooms painted by them. I trust them to be alone in my house (had a Dr appointment). Trustworthy & Dependable THEY R THE BEST!!! NO GAMES & NO RUN AROUND."</p>
-        </div>
-        <div class="carousel-card right">
-          <h3>Cynthia Eubanks-Ortiz</h3>
-          <div class="testimonial-rating">
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-          </div>
-          <p class="testimonial">"I really appreciate them helping with my design for the tiles. They made sure that I understood any hiccups that came up and all my questions were answered. Very professional company!"</p>
-        </div>
-        <div class="carousel-card left" style="height: auto;">
-          <h3>Claudia Noe</h3>
-          <div class="testimonial-rating">
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-          </div>
-          <p class="testimonial">"I have a small master bath in a home built in the late 1960s. The shower floor was in need of repair (I had retiled the shower previously out of necessity), the fixtures were super short and the ceramic floor was the original. Cris, Rey Jr. and Rey Sr. are true professionals and it is apparent that they take great pride in their craftsmanship. They kept me informed of all challenges encountered and made sure I was part of the decision-making process. The project was delayed due to some faulty tiles I received (special order from Lowe’s) but they jumped right back in to complete the job as soon as possible."</p>
-        </div>
-        <div class="carousel-card left" style="height: auto;">
-          <h3>Kathy L Anderson</h3>
-          <div class="testimonial-rating">
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-            <span class="star">&#9733;</span>
-          </div>
-          <p class="testimonial">"My experience with Rey was excellent! He painted the kitchen walls, cabinets, put down new flooring, new countertops, and backsplash. Rey was professional, thorough, and paid great attention to detail. No matter the difficulties of the workday, he was always pleasant and flexible. I’d recommend Rey to anyone who needs quality work done at an affordable rate."</p>
-        </div>
-      </div>
-      <button class="carousel-btn right">›</button>
-    </div>
-  </div>
-</section>
 </body>
+
 </html>

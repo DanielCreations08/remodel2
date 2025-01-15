@@ -94,4 +94,4 @@ function requestService() {
  updateCarousel();
 
  // Auto-scroll every 5 seconds
- setInterval(moveNext, 5000);
+ setInterval(moveNext, 7000);

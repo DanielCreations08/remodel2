@@ -926,7 +926,7 @@ display: none;
 .carousel-card.left,
 .carousel-card.right {
   z-index: 1;
-  opacity: 10%;
+  opacity: 40%;
 }
 
 .carousel-btn {
