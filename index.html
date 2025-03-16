@@ -20,50 +20,109 @@
   </head>
 <body>
   <section id="home">
-    <nav class="toggleContainer">
-      <div class="mobile-menu">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About Us</a>
+  <div class="wrapper">
+    <div class="desktop-navbar-mobile">
 
-        <div class="mobileSocialIcons">
-          
-            <h2>Follow Us</h2>
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <nav>
+        <input type="checkbox" id="show-search">
+        <input type="checkbox" id="show-menu">
+        <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+        <div class="content">
+          <ul class="links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/pages/PaintingServices/painting-services-manteno-bourbonnais-bradley-kankakee-momence.html">Blogs</a></li>
+            <li><a href="#">Portfolio</a></li>
+  
+            <li><a href="#">About Us</a></li>
+
+
+            <li>
+              <a href="#" class="desktop-link">Blogs & Services</a>
+              <input type="checkbox" id="show-services">
+              <label for="show-services">Blog</label>
+              <ul>
+                <li><a href="/pages/PaintingServices/painting-services-manteno-bourbonnais-bradley-kankakee-momence.html">Professional Painting</a>
+                </li>
+                                                  <li><a href="/pages/cabinetPaintingBlog/cabinet-painting-blog.html">Cabinet Painting</a></li>
+                                                  <li><a href="/pages/interiorPaintingBlog/interioPainting.html">Interior Painting</a></li>
+                                                  <li><a href="/pages/exteriorPaintingBlog/exteriorPainting.html">Exterior Painting</a></li>
+                                                  <li><a href="/pages/generalPaintingBlog/GeneralPaintingServices.html">General Painting</a></li>
+                                                  
+              </ul>
+            </li>
+          </ul>
         </div>
-      </div>
+  
+      </nav>
+  
+    </div>
+  </div>
 
-      <div>
-        <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">&#9776;</div>
-        <div class="mobile-menu-container" onclick="closeMobileMenu()"></div>
-      </div>
-    </nav>
+      <a href="/index.html"><img id="logo" src="/assets/Logo.png" alt="Company Logo"></a>
+   
 
-    <img id="logo" src="/assets/Logo.png" alt="Company Logo">
+  <div class="wrapper">
+    <div class="desktop-navbar">
+          <nav>
+            <div class="content">
+              <ul class="links">
+                <li><a href="/index.html">HOME</a></li>
+                                <li>
+                                  <a href="#" class="desktop-link">SERVICES</a>
+                                  <input type="checkbox" id="show-services">
+                                  <label for="show-services">SERVICES</label>
+                                  <ul>
+                                    <li>
+                                      <a href="/pages/PaintingServices/painting-services-manteno-bourbonnais-bradley-kankakee-momence.html" class="desktop-link">Profesional Painting</a>
+                                      <input type="checkbox" id="show-items">
+                                    </li>
+                                  </ul>
+                                </li>
+                <li><a href="#">PORTFOLIO</a></li>
+          
+                <li>
+                  <a href="#" class="desktop-link">BLOG</a>
+                  <input type="checkbox" id="show-services">
+                  <label for="show-services">BLOG</label>
+                  <ul>
+                                        <li>
+                                          <a href="#" class="desktop-link">Profesional Painting</a>
+                                          <input type="checkbox" id="show-items">
+                                          <label for="show-items"></label>
+                                          <ul>
+                                            <li><a href="/pages/cabinetPaintingBlog/cabinet-painting-blog.html">Cabinet Painting</a></li>
+                                            <li><a href="/pages/interiorPaintingBlog/interioPainting.html">Interior Painting</a></li>
+                                            <li><a href="/pages/exteriorPaintingBlog/exteriorPainting.html">Exterior Painting</a></li>
+                                            <li><a href="/pages/generalPaintingBlog/GeneralPaintingServices.html">General Painting</a></li>
+                                          <!--  <li><a href="#">Calculator (NEW!)</a></li>-->
+                                          </ul>
+                                        </li>
+                 <!--  <li><a href="#">Drop Menu 1</a></li>
+                    <li><a href="#">Drop Menu 2</a></li>
+                    <li><a href="#">Drop Menu 3</a></li>-->
+                  </ul>
+                </li>
+                <li><a href="#">ABOUT US</a></li>
+              </ul>
+            </div>
+          
+          </nav>
 
-    <nav class="navbar">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#about">About Us</a>
-    </nav>
+    </div>
+  </div>
 
     <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.facebook.com/remodelwithsilva" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/remodelwithsilva/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@buildingupthekingdom" target="_blank"><i class="fab fa-tiktok"></i></a>
     </div>
 
   <div class="call-for-estimate">
     <i class="fas fa-phone-alt"></i>
     <span>
-        <strong>Call for free estimate</strong><br>
-        <div class="phoneNumber">
-        708-270-7794
-        </div>
+        <strong>Call for free estimate</strong><br><a href="tel:+17082707794"><div class="phoneNumber">
+          708-270-7794
+        </div></a>
     </span>
   </div>
 
@@ -91,10 +150,10 @@
       <img src="/assets/silva-team.jpg" alt="" data-aos="flip-right" data-aos-duration="1200">
       <div class="hero-text">
         <h1>What is your next project?</h1>
-        <p>Your home is more than just a space; it's a reflection of you. Invest wisely, invest in comfort, and watch as your dream home becomes a reality.
+        <p>Your home is more than just a space; it's a reflection of you. Invest wisely, invest in comfort, and watch as your
+          dream home becomes a reality.
         </p>
       </div>
-    </div>
   </section>
 
   <section class="overlay-section">
@@ -236,9 +295,6 @@
 </section>
 
 <section>
-  <div>
-    
-  </div>
   <div class="carouselContainer">
     <div class="carousel">
       <button class="carousel-btn left">‹</button>
@@ -301,7 +357,34 @@
       </div>
       <button class="carousel-btn right">›</button>
     </div>
+
+              <footer class="footer">
+                <div class="social-media">
+                  <a href="https://www.linkedin.com/in/cristobal-silva/" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                  </a>
+                </div>
+                <div class="contact-info">
+                  <p>
+                    <i class="fas fa-phone" style="font-size:24px; color:#ffffff;"></i>
+                    Phone: <a href="tel:+17082707794">708-270-7794</a>
+                  </p>
+                  <p>
+                    <i class="fas fa-envelope" style="font-size:24px; color:#ffffff;"></i>
+                    Email: <a href=" mailto:remodelwithsilva@gmail.com">remodelwithsilva@gmail.com</a>
+                  </p>
+                </div>
+              </footer>
   </div>
 </section>
+
+        <div class="copyContainer">
+          <p>&copy; 2025 Silva's Remodeling | Serving Bourbonnais, Bradley, Manteno, Kankakee, Momence, and St. Anne
+          </p>
+        </div>
+        
+        
+        <!-- Link to the external JavaScript file -->
+        <script src="script.js"></script>
 </body>
 </html>
