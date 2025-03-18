@@ -395,6 +395,15 @@ text-align: left;
 
 }
 
+/* Ensure Remodeling Services behaves like Services */
+.content .links #show-features:checked ~ ul,
+.content .links #show-services:checked ~ ul,
+.content .links #show-items:checked ~ ul,
+.content .links #show-remodel:checked ~ ul { /* ✅ Added for Remodeling */
+    max-height: 100vh;
+}
+
+
 /* NAV BAR ENDS */
 
 .social-icons {
